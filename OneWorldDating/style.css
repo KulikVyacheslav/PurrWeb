@@ -1,0 +1,465 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none; }
+
+button:focus, button:hover {
+  outline: none; }
+
+button::-moz-focus-inner {
+  border: 0; }
+
+input:focus, input:hover {
+  outline: none; }
+
+a {
+  text-decoration: none; }
+
+button:hover {
+  opacity: 0.93; }
+
+button:active {
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.35);
+  border-radius: 3px; }
+
+.container {
+  max-width: 1270px;
+  margin: 0 auto; }
+
+.sticky-sprite {
+  height: 195px;
+  width: 50px;
+  background-image: url("src/img/sticky_sprite.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 420px;
+  z-index: 1; }
+  .sticky-sprite a {
+    height: calc(195px / 4);
+    width: 50px;
+    display: inline-block; }
+
+.header {
+  background-image: url("src/img/smile_people.png");
+  background-repeat: no-repeat;
+  background-size: 100vw; }
+
+.menu {
+  display: flex;
+  justify-content: flex-end; }
+  .menu_margin-top {
+    margin-top: 20px; }
+  .menu__text {
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    color: #2f1946;
+    margin-right: 10px; }
+  .menu__icon {
+    margin-right: 60px; }
+
+.header-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .header-container__logo {
+    margin-top: 120px; }
+  .header-container__title {
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    font-weight: bold;
+    font-size: 67px;
+    line-height: 1.2;
+    color: #2f1946;
+    margin-top: 95px; }
+  .header-container__border {
+    margin-top: 72px;
+    border: 1px solid #81398b;
+    padding: 10px 12px;
+    border-radius: 50px; }
+  .header-container__gstarted:active {
+    border-radius: 50px; }
+  .header-container__gstarted {
+    display: flex;
+    padding: 15px 25px;
+    background-color: #81398b;
+    border-radius: 50px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    color: #ffffff; }
+    .header-container__gstarted img {
+      margin-left: 11px; }
+  .header-container__union {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 85px;
+    font-size: 41px;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-weight: bold;
+    line-height: 1.2; }
+    .header-container__union-block {
+      height: 330px;
+      width: 235px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; }
+      .header-container__union-block_light-red {
+        background-color: #fe4a5d; }
+      .header-container__union-block_red {
+        background-color: #e22028; }
+      .header-container__union-block_orange {
+        background-color: #ff6c00; }
+      .header-container__union-block img {
+        margin-top: 65px;
+        width: 100px; }
+      .header-container__union-block p {
+        width: 100%;
+        text-align: center;
+        padding: 42px 0;
+        background-color: rgba(0, 0, 0, 0.05); }
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .welcome_margin-top {
+    margin-top: 135px; }
+  .welcome_margin-bottom {
+    margin-bottom: 55px; }
+  .welcome__title {
+    display: flex; }
+    .welcome__title p {
+      margin-left: 10px;
+      text-transform: uppercase;
+      font-size: 52px;
+      font-family: 'Dosis', sans-serif;
+      color: #2f1946;
+      font-weight: bold;
+      line-height: 1.2; }
+  .welcome__text {
+    margin-top: 45px; }
+    .welcome__text p {
+      font-size: 30px;
+      font-family: 'Dosis', sans-serif;
+      color: #2f1946;
+      font-weight: bold;
+      line-height: 1.2;
+      text-align: center; }
+  .welcome__author {
+    align-self: flex-end; }
+    .welcome__author p {
+      font-size: 30px;
+      font-family: 'Dosis', sans-serif;
+      color: #fe4a5d;
+      font-weight: bold;
+      line-height: 1.2;
+      text-align: right; }
+
+.free_join {
+  background-image: url("src/img/people.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 550px;
+  display: flex;
+  justify-content: center; }
+  .free_join_margin-bottom {
+    margin-bottom: 155px; }
+  .free_join__border {
+    height: 100%;
+    width: 466px;
+    background-image: -moz-linear-gradient(0deg, #e22028 0%, #f9b416 100%);
+    background-image: -webkit-linear-gradient(0deg, #e22028 0%, #f9b416 100%);
+    background-image: -ms-linear-gradient(0deg, #e22028 0%, #f9b416 100%); }
+  .free_join__form {
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .free_join__form-registration {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin-top: 20px; }
+      .free_join__form-registration input {
+        padding-left: 13px;
+        color: #642f6b;
+        font-family: 'Dosis', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.2;
+        width: 300px;
+        height: 40px;
+        box-sizing: border-box;
+        border-width: 2px;
+        border-color: gainsboro;
+        border-style: solid;
+        border-radius: 4px;
+        background-color: white;
+        margin-bottom: 12px; }
+      .free_join__form-registration input::-moz-placeholder {
+        color: #642f6b; }
+      .free_join__form-registration input::-webkit-input-placeholder {
+        color: #642f6b; }
+    .free_join__form-text {
+      margin-top: 65px;
+      margin-bottom: 45px;
+      font-size: 38px;
+      font-family: 'Dosis', sans-serif;
+      color: #2f1946;
+      font-weight: bold;
+      line-height: 1.2; }
+  .free_join__button {
+    border-radius: 4px;
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2; }
+    .free_join__button_color-facebook {
+      background-color: #2f53a3; }
+    .free_join__button_color-purple {
+      background-color: #81398b; }
+    .free_join__button_img-margin img {
+      margin-right: 5px; }
+  .free_join__separator {
+    position: relative; }
+    .free_join__separator hr {
+      margin-top: 17px;
+      width: 300px;
+      background-color: gainsboro;
+      color: gainsboro;
+      border: 0;
+      height: 2px; }
+    .free_join__separator-text {
+      width: 35px;
+      text-align: center;
+      font-size: 14px;
+      font-family: 'Dosis', sans-serif;
+      color: #9b9b9b;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.2;
+      background-color: white; }
+      .free_join__separator-text_position {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - (35px / 2)); }
+
+.join_now {
+  background-image: url("src/img/fotter_img.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 730px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .join_now_margin-bottom {
+    margin-bottom: 30px; }
+  .join_now__title {
+    font-size: 40px;
+    margin-top: 20px;
+    font-family: 'Dosis', sans-serif;
+    color: #67326e;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2; }
+  .join_now__text {
+    font-size: 46px;
+    font-family: 'Dosis', sans-serif;
+    color: #67326e;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 28px; }
+  .join_now__button {
+    border-radius: 3px;
+    background-image: -moz-linear-gradient(0deg, #e22028 0%, #f9b416 100%);
+    background-image: -webkit-linear-gradient(0deg, #e22028 0%, #f9b416 100%);
+    background-image: -ms-linear-gradient(0deg, #e22028 0%, #f9b416 100%);
+    font-size: 16px;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    padding: 15px 25px; }
+
+.subscribe {
+  display: flex;
+  justify-content: center; }
+  .subscribe_margin-bottom {
+    margin-bottom: 35px; }
+  .subscribe__form {
+    display: flex; }
+    .subscribe__form label {
+      font-size: 16px;
+      font-family: 'Dosis', sans-serif;
+      color: #00cfae;
+      font-weight: bold;
+      line-height: 1.2;
+      align-self: center;
+      margin-right: 20px; }
+    .subscribe__form input {
+      border-width: 1px;
+      border-color: #cdcdcd;
+      border-style: solid;
+      width: 260px;
+      border-radius: 4px 0 0 4px;
+      border-right: 0;
+      background-color: white;
+      padding: 10px 13px;
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      color: #cecece;
+      line-height: 1.2; }
+    .subscribe__form button {
+      background-color: #00cfae;
+      padding: 10px 25px;
+      border-radius: 0 4px 4px 0;
+      font-size: 16px;
+      font-family: 'Dosis', sans-serif;
+      color: #fefefe;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.2; }
+    .subscribe__form button:active {
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 0 3px 3px 0; }
+
+.footer__line {
+  background-color: #fafafa;
+  min-height: 70px;
+  display: flex;
+  align-items: center; }
+.footer__menu {
+  width: 100%; }
+  .footer__menu ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none; }
+  .footer__menu li {
+    font-size: 16px;
+    font-family: 'Dosis', sans-serif;
+    color: #2f1946;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.875; }
+    .footer__menu li a:hover {
+      opacity: 0.95; }
+    .footer__menu li a:active {
+      color: #00cfae; }
+.footer__sprite {
+  background-image: url("src/img/flags.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  height: 25px; }
+  .footer__sprite a {
+    height: 25px;
+    padding-right: 2px;
+    width: 25px;
+    display: inline-block; }
+.footer__hr hr {
+  margin: 10px 0;
+  padding: 0;
+  height: 0;
+  border: none;
+  border-top: 2px solid gainsboro; }
+.footer__copyright {
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  color: #2f1946;
+  line-height: 2; }
+
+@media screen and (max-width: 1024px) {
+  .sticky-sprite {
+    top: 120px; }
+
+  .container {
+    padding: 0 20px; }
+
+  .header-container__logo {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center; }
+    .header-container__logo img {
+      width: 80%; }
+  .header-container__title {
+    margin-top: 50px;
+    font-size: 40px;
+    line-height: 1; }
+  .header-container__border {
+    margin-top: 30px; }
+  .header-container__union {
+    margin-top: 30px; }
+    .header-container__union-block {
+      height: 250px;
+      width: 180px; }
+      .header-container__union-block img {
+        width: 70px;
+        margin-top: 60px; }
+      .header-container__union-block p {
+        font-size: 25px;
+        line-height: 1;
+        padding: 25px 0; }
+
+  .welcome_margin-bottom {
+    margin-bottom: 30px; }
+  .welcome_margin-top {
+    margin-top: 50px; } }
+@media screen and (max-width: 767px) {
+  .sticky-sprite {
+    height: 140px;
+    width: 35px;
+    background-size: cover; }
+    .sticky-sprite a {
+      height: 30px;
+      width: 100%; }
+
+  .header-container__title {
+    text-align: center; }
+  .header-container__logo {
+    width: 50%; }
+  .header-container__union {
+    flex-direction: column;
+    align-items: center; }
+    .header-container__union-block {
+      margin-bottom: 15px; }
+
+  .footer__menu ul {
+    flex-direction: column;
+    align-items: center; }
+  .footer__sprite {
+    width: 450px;
+    background-size: contain;
+    padding: 0; }
+    .footer__sprite a {
+      height: 25px;
+      width: 25px;
+      padding-right: 0; } }
+
+/*# sourceMappingURL=style.css.map */

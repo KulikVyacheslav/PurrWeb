@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>One World Dating</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelectorAll('button')
+            const link = document.querySelectorAll('a')
+            btn.forEach((el) => {
+                el.addEventListener('click', (event) => {
+                   event.preventDefault()
+                })
+            })
+            link.forEach((el) => {
+                el.addEventListener('click', (event) => {
+                    event.preventDefault()
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="sticky-sprite">
+    <a href="1"></a>
+    <a href="2"></a>
+    <a href="3"></a>
+    <a href="4"></a>
+</div>
+<div class="header">
+    <div class="menu menu_margin-top">
+        <div class="menu__text"><a href="">Menu</a></div>
+        <div class="menu__icon">
+            <a href=""><img src="src/img/menu-symbol-of-three-parallel-lines.png" alt=""></a>
+        </div>
+    </div>
+
+    <div class="header-container container">
+        <div class="header-container__logo">
+            <img src="src/img/logo.png" alt="">
+        </div>
+        <div class="header-container__title">
+            <p>Find Someone to Click With</p>
+        </div>
+        <div class="header-container__border">
+            <button class="header-container__gstarted">Get Started<img src="src/img/arrow-pointing-to-right.png" alt=""></button>
+        </div>
+        <div class="header-container__union">
+            <div class="header-container__union-block header-container__union-block_light-red">
+                <img src="src/img/worldwide.png" alt="">
+                <p>One World</p>
+            </div>
+            <div class="header-container__union-block header-container__union-block_red">
+                <img src="src/img/020-two-hearts-3.png" alt="">
+                <p>Two Hearts</p>
+            </div>
+            <div class="header-container__union-block header-container__union-block_orange">
+                <img src="src/img/wifi.png" alt="">
+                <p>One Site</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+        <div class="welcome container welcome_margin-bottom welcome_margin-top">
+            <div class="welcome__title">
+                <img src="src/img/-e-Logo%20Heart-03.png" alt="">
+                <p>welcome!</p>
+            </div>
+            <div class="welcome__text">
+                <p>“Love is a promise, love is a souvenir, once given never forgotten, never let it disappear.”</p>
+            </div>
+            <div class="welcome__author">
+                <p>- John Lennon</p>
+            </div>
+        </div>
+
+    <div class="free_join free_join_margin-bottom">
+        <div class="free_join__border">
+            <div class="free_join__form">
+                <p class="free_join__form-text">IT`S FREE TO JOIN</p>
+                <form action="">
+                    <button class="free_join__button free_join__button_color-facebook free_join__button_img-margin"><img
+                            src="src/img/f_icon.png" alt="">Sign up with Facebook
+                    </button>
+                </form>
+                <div class="free_join__separator">
+                    <hr noshade>
+                    <p class="free_join__separator-text free_join__separator-text_position">OR</p>
+                </div>
+                <form action="#" class="free_join__form-registration">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Confirm Password">
+                    <button class="free_join__button free_join__button_color-purple">Let’s Go!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="join_now join_now_margin-bottom">
+        <div class="join_now__title">
+            <h1>JOIN NOW</h1>
+        </div>
+        <div class="join_now__text">
+            <p>It’s free!</p>
+        </div>
+        <div class="join_now__gstarted">
+            <form action="">
+                <button class="join_now__button">GET STARTED</button>
+            </form>
+        </div>
+    </div>
+
+        <div class="subscribe container subscribe_margin-bottom">
+            <form action="" class="subscribe__form">
+                <label for="email_subscribe">Sign up for our newsletter</label>
+                <input type="email" id="email_subscribe" placeholder="Email Address">
+                <button>Subscribe</button>
+            </form>
+        </div>
+
+</div>
+<div class="footer">
+    <div class="footer__line">
+        <div class="container footer__menu">
+            <ul>
+                <li><a href="">about</a></li>
+                <li><a href="">contact</a></li>
+                <li><a href="">FAQs</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Online Safety</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms of Use</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container footer__sprite">
+        <a href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a
+            href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a
+            href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a
+            href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a
+            href=""></a><a href=""></a><a href=""></a>
+    </div>
+    <div class="container footer__hr">
+        <hr>
+    </div>
+    <div class="container footer__copyright">
+        <p>&copy; 2017 All World Dating Enterprise Company LLC. All rights reserved. We&nbsp;pledge never to&nbsp;share or&nbsp;sell your Email Address</p>
+    </div>
+</div>
+
+</body>
+</html>
