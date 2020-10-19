@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //Устанавливаем ширину блока с изображениями - зависит от числа img
     const widthSliderBlock = (sliderBlockAll) => {
         sliderBlockAll.forEach(el => {
-            el.style.width = `${100 / (sliderBlockAll.length + 2)}%` //компенсируем слайдерами спереди и сзади
+            el.style.width = `${100 / sliderBlockAll.length}%`
         })
     }
 
@@ -94,14 +94,18 @@ window.addEventListener('DOMContentLoaded', () => {
         controlDotAll[nextIndexPositionDot].classList.add('slider__control-dot_active')
     }
 
+    const initSlider = (slider, sliderWrapper, sliderBlockAll) => {
+        sliderWrapper.style.width = `${sliderBlockAll.length * 100}%`
+        sliderWrapper.style.left = `0%`
+        widthSliderBlock(sliderBlockAll)
+        createControlUI(slider, sliderBlockAll.length)
+    }
+
     const slider = document.querySelector('.slider')
     const sliderWrapper = document.querySelector('.slider__wrapper')
     const sliderBlockAll = document.querySelectorAll('.slider__block')
 
-    sliderWrapper.style.width = `${(sliderBlockAll.length + 2) * 100}%` //компенсируем слайдерами спереди и сзади
-    sliderWrapper.style.left = `0%`
-    widthSliderBlock(sliderBlockAll)
-    createControlUI(slider, sliderBlockAll.length)
+    initSlider(slider, sliderWrapper, sliderBlockAll)
 
     const controlDotAll = document.querySelectorAll('.slider__control-dot')
     const controlPrev = document.querySelector('.slider__control-prev')
@@ -109,43 +113,87 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     handlerControlButton(controlNext, () => {
-        if(!interval) {
+        if(!interval) {//защита от уже активного перемещения
+
+            //эмуляция выезжающего слайдера справа
+            if(sliderWrapper.style.left === `-${(sliderBlockAll.length - 1) * 100}%` && currentPositionDot(controlDotAll) === 0) {
+                sliderWrapper.insertAdjacentElement('afterbegin', sliderBlockAll[0])
+                sliderWrapper.style.left = `0%`
+            }
+
+            if(sliderWrapper.style.left === `-${(sliderBlockAll.length - 1) * 100}%` && currentPositionDot(controlDotAll) === (sliderBlockAll.length - 1)) {
+
+                sliderWrapper.insertAdjacentElement('afterbegin', sliderBlockAll[sliderBlockAll.length - 1])
+                sliderWrapper.style.left = `0%`
+            }
+            if(sliderWrapper.style.left === '-100%' && currentPositionDot(controlDotAll) === 0) {
+
+                sliderWrapper.style.left = `0%`
+                sliderWrapper.insertAdjacentElement('beforeend', sliderBlockAll[sliderBlockAll.length - 1])
+            }
+
             controlSlide(sliderWrapper, 1000, '+')
             moveControlDot(controlDotAll, '+')
-
-            //console.log(currentPositionDot(controlDotAll))
-            // if(currentPositionDot(controlDotAll) === (sliderBlockAll.length - 1)) {
-            //     console.log(sliderBlockAll[0])
-            //     let cloneFirstBlock = sliderBlockAll[0].cloneNode(true)
-            //
-            //     sliderWrapper.appendChild(cloneFirstBlock)
-            //     //widthSliderBlock(sliderBlockAll)
-            //     console.log(sliderWrapper)
-            //
-            //
-            // }
-
         }
     })
 
     handlerControlButton(controlPrev, () => {
-        if(!interval) {
+        if(!interval) {//защита от уже активного перемещения
+
+            //эмуляция выезжающего сладйдера слева
+            if(sliderWrapper.style.left === `0%` && currentPositionDot(controlDotAll) === (sliderBlockAll.length - 1)) {
+                sliderWrapper.style.left = `-${(sliderBlockAll.length - 1) * 100}%`
+                sliderWrapper.insertAdjacentElement('beforeend', sliderBlockAll[sliderBlockAll.length - 1])
+            }
+            if(sliderWrapper.style.left === `0%` && currentPositionDot(controlDotAll) === 0) {
+                sliderWrapper.style.left = `-${(sliderBlockAll.length - 1) * 100}%`
+                sliderWrapper.insertAdjacentElement('beforeend', sliderBlockAll[0])
+
+            }
+            if(sliderWrapper.style.left === `-${(sliderBlockAll.length - 2) * 100}%` && currentPositionDot(controlDotAll) === (sliderBlockAll.length - 1)) {
+                sliderWrapper.style.left = `-${(sliderBlockAll.length - 1) * 100}%`
+                sliderWrapper.insertAdjacentElement('afterbegin', sliderBlockAll[0])
+            }
+
             controlSlide(sliderWrapper, 1000, '-')
             moveControlDot(controlDotAll, '-')
         }
     })
 
+    //обработчик понели с точками
     controlDotAll.forEach((el, ind) => {
         el.addEventListener('click', () => {
+            if(!interval) { //защита от уже активного перемещения
 
-            if(!interval) {
                 const currentIndexPositionDot = currentPositionDot(controlDotAll)
                 let shiftPosition = ind - currentIndexPositionDot
                 const action = (shiftPosition > 0) ? '+' : '-'
                 shiftPosition = Math.abs(shiftPosition)
 
-                controlSlide(sliderWrapper, 1000, action, shiftPosition)
-                moveControlDot(controlDotAll, action, shiftPosition)
+                if(shiftPosition) { //если клик на текущую позицию - то ничего не делаем
+
+                    //эмуляция выезжающего сладйдера слева
+                    if(sliderWrapper.style.left === '-100%' && currentPositionDot(controlDotAll) === 0) {
+                        sliderWrapper.style.left = `0%`
+                        sliderWrapper.insertAdjacentElement('beforeend', sliderBlockAll[sliderBlockAll.length - 1])
+                    }
+                    if(sliderWrapper.style.left === `-${(sliderBlockAll.length - 2) * 100}%` && currentPositionDot(controlDotAll) === (sliderBlockAll.length - 1)) {
+                        sliderWrapper.style.left = `-${(sliderBlockAll.length - 1) * 100}%`
+                        sliderWrapper.insertAdjacentElement('afterbegin', sliderBlockAll[0])
+                    }
+                    if(sliderWrapper.style.left === `-${(sliderBlockAll.length - 1) * 100}%` && currentPositionDot(controlDotAll) === 0) {
+                        sliderWrapper.insertAdjacentElement('afterbegin', sliderBlockAll[0])
+                        sliderWrapper.style.left = `0%`
+                    }
+                    if(sliderWrapper.style.left === `0%` && currentPositionDot(controlDotAll) === (sliderBlockAll.length - 1)) {
+                        sliderWrapper.style.left = `-${(sliderBlockAll.length - 1) * 100}%`
+                        sliderWrapper.insertAdjacentElement('beforeend', sliderBlockAll[sliderBlockAll.length - 1])
+                    }
+
+
+                    controlSlide(sliderWrapper, 1000, action, shiftPosition)
+                    moveControlDot(controlDotAll, action, shiftPosition)
+                }
             }
 
         })
