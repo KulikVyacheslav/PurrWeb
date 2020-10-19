@@ -121,9 +121,11 @@ a {
 
   &__block {
     //width: 10%;
+    overflow: hidden;
     height: 90%;
     display: flex;
     justify-content: center;
+
 
     img {
       height: 100%;
